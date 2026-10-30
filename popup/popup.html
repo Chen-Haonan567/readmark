@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../icons/icon32.png" alt="" width="22" height="22">
+    <span class="title">ReadMark</span>
+    <button id="options" class="ghost" title="管理所有笔记 / 设置" aria-label="设置">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+    </button>
+  </header>
+
+  <label class="layer">
+    <span>
+      <span class="label">笔记层</span>
+      <span class="sub" id="layerSub">高亮、旁注和便签正在显示</span>
+    </span>
+    <input type="checkbox" id="layer" role="switch">
+    <span class="switch" aria-hidden="true"></span>
+  </label>
+
+  <section id="stats" class="stats">
+    <div><b id="hl">0</b><span>高亮</span></div>
+    <div><b id="notes">0</b><span>旁注</span></div>
+    <div><b id="stickies">0</b><span>便签</span></div>
+  </section>
+  <p id="orphans" class="warn" hidden></p>
+  <p id="unavailable" class="sub center" hidden>这个页面无法使用插件。<br>如果是刚安装或刚更新插件，请刷新网页。</p>
+
+  <div class="actions">
+    <button id="addSticky" class="primary">添加便签</button>
+    <button id="clear" class="ghost danger">清空本页</button>
+  </div>
+  <p class="foot"><kbd id="k1">⌥⇧H</kbd> 笔记层 · <kbd id="k2">⌥⇧N</kbd> 便签</p>
+  <script src="popup.js"></script>
+</body>
+</html>

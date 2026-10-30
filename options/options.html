@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>ReadMark · 笔记与设置</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1><img src="../icons/icon48.png" alt="" width="28" height="28"> ReadMark 笔记与设置</h1>
+
+    <section class="card">
+      <h2>设置</h2>
+      <div class="grid">
+        <label>翻译源
+          <select id="provider">
+            <option value="microsoft">Microsoft（Edge 内置接口，国内可直连，推荐）</option>
+            <option value="google">Google 翻译（国内可能需要代理）</option>
+            <option value="mymemory">MyMemory（免费，每日有额度）</option>
+          </select>
+        </label>
+        <label>翻译成
+          <select id="targetLang">
+            <option value="zh-CN">简体中文</option>
+            <option value="zh-TW">繁體中文</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+          </select>
+        </label>
+        <label>默认高亮颜色（「📝 笔记」按钮使用）
+          <select id="defaultColor">
+            <option value="yellow">黄</option><option value="green">绿</option><option value="blue">蓝</option>
+            <option value="pink">粉</option><option value="orange">橙</option>
+          </select>
+        </label>
+      </div>
+      <label class="check"><input type="checkbox" id="autoTranslate"> 选中文字后自动翻译（关闭后需点「翻译」按钮）</label>
+      <label class="check"><input type="checkbox" id="dblclickNote"> 双击单词时自动高亮，并把词义写成笔记
+      <label class="check"><input type="checkbox" id="showPhonetic"> 单个英文单词显示音标（Free Dictionary API）</label>
+      <label class="check"><input type="checkbox" id="layerVisible"> 显示笔记层</label>
+      <p class="muted">当前翻译源失败时会自动尝试其他翻译源。快捷键可在 Edge 的 <code>edge://extensions/shortcuts</code> 修改。</p>
+      <p id="saved" class="ok" hidden>已保存</p>
+    </section>
+
+    <section class="card">
+      <div class="toolbar">
+        <h2>所有笔记</h2>
+        <input id="search" type="search" placeholder="搜索单词、译文、笔记、网页标题…">
+      </div>
+      <div class="toolbar">
+        <button id="exportJson">导出备份 (JSON)</button>
+        <button id="importJson">导入备份</button>
+        <button id="exportCsv">导出生词本 (CSV)</button>
+        <input id="importFile" type="file" accept="application/json" hidden>
+        <span id="summary" class="muted"></span>
+      </div>
+      <div id="pages"></div>
+    </section>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>

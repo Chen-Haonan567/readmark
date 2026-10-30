@@ -1,0 +1,54 @@
+/* ReadMark：网页内的高亮与旁注（笔记层） */
+wn-mark {
+  background-color: rgba(250, 204, 21, 0.38);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 1px;
+  margin: 0 -1px;
+  cursor: pointer;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition: background-color .15s;
+}
+wn-mark[data-color="yellow"] { background-color: rgba(250, 204, 21, 0.38); }
+wn-mark[data-color="green"]  { background-color: rgba(74, 222, 128, 0.35); }
+wn-mark[data-color="blue"]   { background-color: rgba(96, 165, 250, 0.35); }
+wn-mark[data-color="pink"]   { background-color: rgba(244, 114, 182, 0.32); }
+wn-mark[data-color="orange"] { background-color: rgba(251, 146, 60, 0.36); }
+
+wn-note {
+  display: inline-block;
+  max-width: 260px;
+  margin: 0 2px 0 6px;
+  padding: 0 8px;
+  vertical-align: baseline;
+  border-radius: 999px;
+  background: #fef6c3;
+  color: #713f12;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .06);
+  font: 500 12px/1.75 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  text-indent: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: box-shadow .15s;
+}
+wn-note:hover {
+  white-space: normal; overflow: visible; position: relative; z-index: 2147483000;
+  border-radius: 10px; box-shadow: 0 6px 20px -6px rgba(0, 0, 0, .25), inset 0 0 0 1px rgba(0, 0, 0, .06);
+}
+wn-note[data-color="green"]  { background: #dcf7e3; color: #14532d; }
+wn-note[data-color="blue"]   { background: #dcebff; color: #1e3a8a; }
+wn-note[data-color="pink"]   { background: #fde2ef; color: #831843; }
+wn-note[data-color="orange"] { background: #ffe7d1; color: #7c2d12; }
+
+/* 笔记层隐藏 */
+html.wn-hidden wn-mark { background-color: transparent !important; cursor: inherit; }
+html.wn-hidden wn-note { display: none !important; }
