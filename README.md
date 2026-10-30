@@ -243,8 +243,12 @@ readmark/
 
 ## 参与贡献
 
-欢迎提 [Issue](https://github.com/Chen-Haonan567/readmark/issues) 反馈问题或建议，也欢迎 Pull Request。
+欢迎提 [Issue](https://github.com/Chen-Haonan567/readmark/issues) 反馈问题或建议，也欢迎通过 Pull Request 直接给本仓库提交改进。
 
 ## 许可证
 
-[MIT](LICENSE)
+本项目采用 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans)（署名-非商业性使用-禁止演绎）许可，完整条款见 [LICENSE](LICENSE)。
+
+- ✅ 可以免费下载、使用，也可以原样转发分享，但需注明作者并附上本仓库链接；
+- ❌ 不可用于商业用途；
+- ❌ 不可发布修改后的版本。
